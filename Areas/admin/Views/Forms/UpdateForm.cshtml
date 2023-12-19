@@ -1,0 +1,62 @@
+﻿@using Task_16.Areas.admin.Data.Dto.Staticstic;
+@model UpdateStatisticDto
+
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title"> Form</div>
+        <hr>
+        <form asp-area="Admin" asp-controller="Forms" asp-action="UpdateForm" method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Statistic"></label>
+                <input asp-for="@Model.Statistic" class="form-control" placeholder="Enter Statistic" />
+                <span asp-validation-for="@Model.Statistic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsName"></label>
+                <input asp-for="@Model.StatisticsName" class="form-control" placeholder="Enter Statistics Name">
+                <span asp-validation-for="@Model.StatisticsName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsVisit"></label>
+                <input asp-for="@Model.StatisticsVisit" class="form-control" placeholder="Enter the visit">
+                <span asp-validation-for="@Model.StatisticsVisit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsVisits"></label>
+                <input asp-for="@Model.StatisticsVisits" class="form-control" placeholder="Enter the visit">
+                <span asp-validation-for="@Model.StatisticsVisits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsDuration"></label>
+                <input asp-for="@Model.StatisticsDuration" class="form-control" placeholder="Enter the visit">
+                <span asp-validation-for="@Model.StatisticsDuration" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsTime">Time</label>
+                <input asp-for="@Model.StatisticsTime" type="time" class="form-control" placeholder="Enter the visit">
+                <span asp-validation-for="@Model.StatisticsTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsPercent"></label>
+                <input asp-for="@Model.StatisticsPercent" class="form-control" placeholder="Enter the visit">
+                <span asp-validation-for="@Model.StatisticsPercent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsPercentage"></label>
+                <input asp-for="@Model.StatisticsPercentage" class="form-control" placeholder="Enter the visit">
+                <span asp-validation-for="@Model.StatisticsPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.StatisticsPercentages"></label>
+                <input asp-for="@Model.StatisticsPercentages" class="form-control" placeholder="Enter the visit">
+                <span asp-validation-for="@Model.StatisticsPercentages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-light px-5"><i class="icon-lock"></i> Register</button>
+            </div>
+        </form>
+    </div>
+</div>
