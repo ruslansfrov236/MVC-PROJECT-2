@@ -34,16 +34,28 @@ app.MapRazorPages();
 app.MapAreaControllerRoute(
     name: "areas",
     areaName: "admin",
-    pattern:"table",
-    defaults: new {controller= "Tables" , action="Index" }
+    pattern: "details/{id}",
+    defaults: new { controller = "Tables", action = "Details" }
     );
 app.MapAreaControllerRoute(
     name: "areas",
     areaName: "admin",
-    pattern: "update/{id}",
-    defaults: new { controller = "Forms", action = "UpdateFord" , id="" }
-);
+    pattern:"table",
+    defaults: new {controller= "Tables" , action="Index" }
+    );
 
+app.MapAreaControllerRoute(
+    name: "areas",
+    areaName: "admin",
+    pattern: "update/{id}",
+    defaults: new { controller = "Forms", action = "UpdateForm"  }
+);
+app.MapAreaControllerRoute(
+    name: "areas",
+    areaName: "admin",
+    pattern: "delete/{id}",
+    defaults: new { controller = "Forms", action = "DeleteForm" }
+);
 app.MapAreaControllerRoute(
     name: "areas",
     areaName: "admin",
@@ -55,4 +67,5 @@ app.MapAreaControllerRoute(
     name: "areas",
     areaName: "admin",
     pattern: "{controller=Dashboard}/{action=Index}/{id?}"
-);app.Run();
+);
+app.Run();

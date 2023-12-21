@@ -16,15 +16,17 @@ namespace Task_16.Areas.admin.Controllers
         public async Task<IActionResult> Index()
         {
 
-            Statistics statistics = await _context.Statistics.FirstOrDefaultAsync();
+            List<Statistics> statistics = await _context.Statistics.ToListAsync();
             return View(statistics);
         }
-
-        public async Task<IActionResult> Details(string  id )
+ 
+        public async Task<IActionResult> Details(string id)
         {
-            await _context.Statistics.FindAsync(Guid.Parse(id));
-          
-            List<Statistics>  statistics = await _context.Statistics.ToListAsync();
+            var statistics = await _context.Statistics.FindAsync(Guid.Parse(id));
+            if (statistics == null)
+            {
+                return NotFound();
+            }
             return View(statistics);
         }
     }
